@@ -120,15 +120,23 @@ const alumnos = [
     },
 ]
 
-alumnos.forEach(alumno => {
-    if (alumno.activo) {
-        console.log('----------------')
-        console.log('Nombre del alumno: ' + alumno.nombre)
-        console.log('----------------')
-        alumno.kardex.forEach(materia => {
-            if (materia.semestre === 1) {
-                console.log(`${materia.materia} - ${materia.calif}`)
-            }
-        })
-    }
-})
+// alumnos.forEach(alumno => {
+//     if (alumno.activo) {
+//         console.log('----------------')
+//         console.log('Nombre del alumno: ' + alumno.nombre)
+//         console.log('----------------')
+//         alumno.kardex.forEach(materia => {
+//             if (materia.semestre === 1) {
+//                 console.log(`${materia.materia} - ${materia.calif}`)
+//             }
+//         })
+//     }
+// })
+
+alumnos.forEach( ({activo, nombre, apellido}) => {
+    activo && console.log(`${nombre} ${apellido}`)
+} )
+
+console.log( alumnos.filter( alumno => alumno.activo )[0].nombre )
+
+// alumnos.map(item => item.kardex.map( materia => console.log( materia.materia, materia.calif) )) 
