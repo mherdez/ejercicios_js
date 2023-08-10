@@ -20,8 +20,8 @@ const fizzbuzz = ( n ) => {
     if ( n % 7 === 0 ) x += 'pluzz'
     if ( n % 9 === 0 ) x += 'ultra'
 
-    if( x ) return x
-    return n
+    return x || n
+    
 }
 
 for( let num = 1; num <= 100; num++) {
